@@ -1,0 +1,5 @@
+@create GetARoom Parent=10
+@Desc GetARoom Parent=%r%tSomeone said "get a room"... and [moniker(v(data`owner))] did! This is a temporary room. Once everyone has left, this room will be deleted, and all objects left in it will be sent home.%r%r%tTo change the name, use [u(ansi,+getaroom/name <name>)]. Please use this to tag your room/scene with '(closed)' or '(open)'.%r%tTo change the desc to something more fitting, use [u(ansi,+getaroom/desc <desc>)].%r%tTo load a desc you have saved, use [u(ansi,+getaroom/load <desc name>)].%r
+&ANSI GetARoom Parent=ansi(g,switch(%0,,<GetARoom>,%0))
+&CMD`GETAROOM/DESC GetARoom Parent=$+getaroom/desc *:@pemit %#=u(ansi) [switch(0,or(controls(%#,%!),match(v(data`owner),%#)),You don't have authority to change the desc here.,You get your room a new desc.[set(%!,desc:%0)])]
+&CMD`GETAROOM/NAME GetARoom Parent=$+getaroom/name *:@assert or(controls(%#,%!),match(v(data`owner),%#))=@pemit %#=u(ansi) You don't have authority to change the desc here.;@pemit %#=u(ansi) You get your room a new desc.[set(%!,desc:%0)];@name %!=%0

@@ -1,0 +1,44 @@
+------------------------------------------------------------------------------
++getaroom                                                                   
+                                                                              
+  Using these commands, players can "get a room". This creates a temporary    
+  room, linked to the room the player was in when they used the command. It   
+  can only be done in or near the RP rooms or on the IC grid. If you          
+  disconnect in a temporary room, you're automatically sent home. Once        
+  everyone leaves a temporary room, it and its exits automatically delete     
+  themselves.
+  
+  Looking at a temporary room's exit also shows the name of the room beyond.
+  If you see a temporary room exit, please do look at it before you enter, to
+  see whether the scene is open.
+                                                                              
+  SYNTAX: +getaroom <room>                                                    
+  Creates a temporary room linked from your location. The exit alias is
+  automatically built from the room name. Words that start with punctuation
+  are skipped, so you can end a name with (open) or (closed) to mark your
+  scene.
+                                                                              
+  SYNTAX: +getaroom <room>=<exit>                                             
+  Creates a temporary room linked from your location, with a customised exit  
+  alias.                                                                      
+
+  The following commands can only be used inside a gotten room, and only if   
+  you created it or otherwise control it.                                     
+                                                                              
+  SYNTAX: +getaroom/name <name>                                               
+  Renames the gotten room.                                                    
+                                                                              
+  SYNTAX: +getaroom/desc <desc>                                               
+  Changes the gotten room's description from its default.                     
+  
+  SYNTAX: +getaroom/load <desc name>                                          
+  Loads a desc you've saved, replacing the gotten room's description.         
+                                                                              
+  You can 'save' descs by writing them into attributes that start with ROOM`. 
+  For example, someone wants to save the desc of a seldom-RPed bathroom:      
+                                                                              
+  &ROOM`BATHROOM me=%r%tThe bathroom is built with a white-tiled floor and    
+  pale blue walls. The sink and shower-cubicle crowd together - there isn't   
+  even enough room for a proper bathtub.%t
+  +getaroom/load Bathroom                                                     
+------------------------------------------------------------------------------

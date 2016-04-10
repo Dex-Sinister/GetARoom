@@ -1,0 +1,3 @@
++GetARoom code, originally programmed on MUX 2.10.1.12 #2 [2012-JUL-07].
+
+Re-compiling the objects in "GetARoom Master Object.txt" and "GetARoom Parent.txt" allow players to create temporary rooms on the game's grid. These rooms can be given descriptions, and will be deleted as soon as all players leave. "GetARoom Helpfile.txt" contains the helpfile text describing how to use the universal commands.
